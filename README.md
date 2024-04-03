@@ -4,6 +4,7 @@
 [![Youtube](https://img.shields.io/badge/YouTube-FF0000?style=for-the-badge&logo=youtube&logoColor=white)](https://www.youtube.com/channel/UC7nfGqB5H_qKciKJwGScinw)
 [![Twitter](https://img.shields.io/badge/Twitter-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white)](https://twitter.com/Natteenss)
 [![Twitch](https://img.shields.io/badge/Twitch-9146FF?style=for-the-badge&logo=twitch&logoColor=white)](https://www.twitch.tv/natteens)
+[![Itchio](https://img.shields.io/badge/Itch.io-FA5C5C?style=for-the-badge&logo=itchdotio&logoColor=white)](https://natteens.itch.io)
 
 
 ![Natteens GitHub stats](https://github-readme-stats.vercel.app/api?username=Natteens&show_icons=true&theme=onedark&include_all_commits=true)
