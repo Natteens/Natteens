@@ -6,7 +6,7 @@
 [![Twitch](https://img.shields.io/badge/Twitch-9146FF?style=for-the-badge&logo=twitch&logoColor=white)](https://www.twitch.tv/natteens)
 
 
-![Natteens GitHub stats](https://github-readme-stats.vercel.app/api?username=Natteens&show_icons=true&theme=onedark)
+![Natteens GitHub stats](https://github-readme-stats.vercel.app/api?username=Natteens&show_icons=true&theme=onedark&include_all_commits=true)
 
 
 ## Tecnologias que eu uso no meu dia
@@ -18,5 +18,5 @@
 <img align="center" alt="css3" src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white" />
 </div><br/>
 
-Apaixonado por jogos  eletrônicos, principalmente pelos gêneros de ação, aventura, e RPG.
+#### Apaixonado por jogos  eletrônicos e Desenvolvimento de jogos.
 
