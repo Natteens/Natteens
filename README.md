@@ -7,7 +7,7 @@
 [![Itchio](https://img.shields.io/badge/Itch.io-FA5C5C?style=for-the-badge&logo=itchdotio&logoColor=white)](https://natteens.itch.io)
 
 
-![Natteens GitHub stats](https://github-readme-stats.vercel.app/api?username=Natteens&show_icons=true&theme=onedark&include_all_commits=true)
+![Natteens GitHub stats](https://github-readme-stats.vercel.app/api?username=Natteens&show_icons=true&theme=onedark&includeallcommits=true)
 
 
 ## Tecnologias que eu uso no meu dia
