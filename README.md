@@ -1,9 +1,13 @@
 # 🎮 Olá, eu sou o Nathan ✌️
 
 ```yaml
-public string name: Nathan;
-public string devFocus: "Game Development;"
-public byte age = 22;
+public class Profile
+{
+    public string firstName { get; } = "Nathan";
+    public string lastName { get; } = "Silva Miranda";
+    public int age { get; } = 22;
+    public string devFocus { get; } = "Game Development";
+}
 ```
 
 ---
