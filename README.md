@@ -3,10 +3,10 @@
 ```yaml
 public class Profile
 {
-    public string firstName { get; } = "Nathan";
-    public string nickName { get; } = "Natte";
-    public int age { get; } = 23;
-    public string devFocus { get; } = "Game Development";
+    public string firstName = "Nathan";
+    public string nickName = "Natte";
+    public int age = 23;
+    public string devFocus = "Game Development";
 }
 ```
 
