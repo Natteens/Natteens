@@ -4,8 +4,8 @@
 public class Profile
 {
     public string firstName { get; } = "Nathan";
-    public string lastName { get; } = "Silva Miranda";
-    public int age { get; } = 22;
+    public string nickName { get; } = "Natte";
+    public int age { get; } = 23;
     public string devFocus { get; } = "Game Development";
 }
 ```
