@@ -1,4 +1,6 @@
-# 🎮 Olá, eu sou o Nathan ✌️
+<h1 align="center">🎮 Olá, eu sou o Nathan ✌️</h1>
+
+###
 
 ```yaml
 public class Profile
@@ -9,6 +11,17 @@ public class Profile
     public string devFocus = "Game Development";
 }
 ```
+
+###
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Natteens/Natteens/output/pacman-contribution-graph-dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/Natteens/Natteens/output/pacman-contribution-graph.svg">
+  <img alt="pacman contribution graph" src="https://raw.githubusercontent.com/Natteens/Natteens/output/pacman-contribution-graph.svg">
+</picture>
+
+###
+
 ## 🌐 Redes Sociais
 
 <div align="center">
@@ -60,12 +73,3 @@ public class Profile
 
 ---
 
-###
-
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Natteens/Natteens/output/pacman-contribution-graph-dark.svg">
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/Natteens/Natteens/output/pacman-contribution-graph.svg">
-  <img alt="pacman contribution graph" src="https://raw.githubusercontent.com/Natteens/Natteens/output/pacman-contribution-graph.svg">
-</picture>
-
-###
