@@ -9,9 +9,6 @@ public class Profile
     public string devFocus = "Game Development";
 }
 ```
-
----
-
 ## 🌐 Redes Sociais
 
 <div align="center">
@@ -32,7 +29,13 @@ public class Profile
   </a>
 </div>
 
----
+## 🛠️ Ferramentas
+
+<div align="center">
+<img src="https://img.shields.io/badge/Unity-White?style=for-the-badge&logo=Unity&labelColor=black&color=%23444d4a" />
+<img src="https://img.shields.io/badge/Rider-White?style=for-the-badge&logo=Rider&labelColor=black&color=%23444d4a" />
+<img src="https://img.shields.io/badge/PyCharm-White?style=for-the-badge&logo=PyCharm&labelColor=black&color=%23444d4a" />
+</div>
 
 ## 📊 Estatísticas
 
@@ -42,15 +45,8 @@ public class Profile
 <br/>
 ![Troféus GitHub](https://github-profile-trophy.vercel.app/?username=Natteens&theme=onedark&no-frame=true&row=1)  
 <br/>
-<img src="https://github-readme-activity-graph.vercel.app/graph?username=Natteens&theme=react-dark&hide_border=true" alt="Graph">
 </div>
 
 ---
 
-## 🛠️ Ferramentas
 
-<div align="center">
-<img src="https://img.shields.io/badge/Unity-White?style=for-the-badge&logo=Unity&labelColor=black&color=%23444d4a" />
-<img src="https://img.shields.io/badge/Rider-White?style=for-the-badge&logo=Rider&labelColor=black&color=%23444d4a" />
-<img src="https://img.shields.io/badge/PyCharm-White?style=for-the-badge&logo=PyCharm&labelColor=black&color=%23444d4a" />
-</div>
