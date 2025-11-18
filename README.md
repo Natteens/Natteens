@@ -1,4 +1,4 @@
-<h1 align="center">🎮 Olá, eu sou o Nathan ✌️</h1>
+<h1 align="center"> Olá, eu sou o Natte! </h1>
 
 ###
 
@@ -22,7 +22,7 @@ public class Profile
 
 ###
 
-## 🌐 Redes Sociais
+## Redes Sociais
 
 <div align="center">
   <a href="https://www.instagram.com/Natteenss/">
@@ -42,7 +42,7 @@ public class Profile
   </a>
 </div>
 
-## 🛠️ Ferramentas
+## Ferramentas
 
 <div align="center">
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/unity/unity-original.svg" height="40" alt="unity logo"  />
@@ -62,11 +62,9 @@ public class Profile
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/blender/blender-original.svg" height="40" alt="blender logo"  />
 </div>
 
-## 📊 Estatísticas
+## Estatísticas
 
 <div align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=Natteens&hide_title=false&hide_rank=false&show_icons=true&include_all_commits=true&count_private=true&disable_animations=false&theme=dracula&locale=en&hide_border=false&order=1" height="150" alt="stats graph"  />
-  <img src="https://github-readme-stats.vercel.app/api/top-langs?username=Natteens&locale=en&hide_title=false&layout=compact&card_width=320&langs_count=5&theme=dracula&hide_border=false&order=2" height="150" alt="languages graph"  />
   <img src="https://streak-stats.demolab.com?user=Natteens&locale=en&mode=daily&theme=dracula&hide_border=false&border_radius=5&order=3" height="150" alt="streak graph"  />
   <img src="https://github-profile-trophy.vercel.app?username=Natteens&theme=dracula&column=-1&row=1&margin-w=8&margin-h=8&no-bg=false&no-frame=false&order=4" height="150" alt="trophy graph"  />
 </div>
