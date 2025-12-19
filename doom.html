@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOOM</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: #000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            overflow: hidden;
+        }
+        #jsdos {
+            width: 800px;
+            height: 600px;
+        }
+    </style>
+</head>
+<body>
+    <div id="jsdos"></div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/js-dos@7.xx/dist/js-dos.js"></script>
+    <script>
+        Dos(document.getElementById("jsdos"), {
+            wdosboxUrl: "https://cdn.jsdelivr.net/npm/js-dos@7.xx/dist/wdosbox.wasm.js",
+        }).ready((fs, main) => {
+            fs.extract("https://cdn.dos.zone/original/2X/2/24b85e04285b0dd03d8f6511cf9a5fdf11d00a48.jsdos").then(() => {
+                main(["-c", "DOOM.EXE"]);
+            });
+        });
+    </script>
+</body>
+</html>
+
