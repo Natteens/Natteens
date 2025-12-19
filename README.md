@@ -12,11 +12,12 @@ public class Profile
 }
 ```
 
-## Doom
+## 🎮 Play Doom!
 
 <div align="center">
   <iframe src="https://silentspacemarine.com/" width="800" height="600" frameborder="0" scrolling="no" style="border: 2px solid #333; border-radius: 8px;">
   </iframe>
+  <p><em>Classic Doom running in WebAssembly! Use arrow keys to move, Ctrl to fire, Space to open doors.</em></p>
 </div>
 
 ###
