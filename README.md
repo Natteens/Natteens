@@ -12,13 +12,12 @@ public class Profile
 }
 ```
 
-###
+## Doom
 
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Natteens/Natteens/output/pacman-contribution-graph-dark.svg">
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/Natteens/Natteens/output/pacman-contribution-graph.svg">
-  <img alt="pacman contribution graph" src="https://raw.githubusercontent.com/Natteens/Natteens/output/pacman-contribution-graph.svg">
-</picture>
+<div align="center">
+  <iframe src="https://silentspacemarine.com/" width="800" height="600" frameborder="0" scrolling="no" style="border: 2px solid #333; border-radius: 8px;">
+  </iframe>
+</div>
 
 ###
 
@@ -61,13 +60,3 @@ public class Profile
   <img width="12" />
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/blender/blender-original.svg" height="40" alt="blender logo"  />
 </div>
-
-## Estatísticas
-
-<div align="center">
-  <img src="https://streak-stats.demolab.com?user=Natteens&locale=en&mode=daily&theme=dracula&hide_border=false&border_radius=5&order=3" height="150" alt="streak graph"  />
-  <img src="https://github-profile-trophy.vercel.app?username=Natteens&theme=dracula&column=-1&row=1&margin-w=8&margin-h=8&no-bg=false&no-frame=false&order=4" height="150" alt="trophy graph"  />
-</div>
-
----
-
