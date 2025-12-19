@@ -13,8 +13,9 @@ public class Profile
 ```
 
 <div align="center">
-  <iframe src="https://raw.githack.com/Natteens/Natteens/main/doom.html" width="800" height="600" style="border: none;">
-  </iframe>
+  <object data="./doom.html" width="640" height="400" type="text/html">
+    <embed src="./doom.html" width="640" height="400" type="text/html" />
+  </object>
 </div>
 
 ###
