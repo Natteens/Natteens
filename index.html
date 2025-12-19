@@ -4,31 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Natteens - DOOM</title>
-    <meta http-equiv="refresh" content="0; url=doom.html">
     <style>
         body {
-            background: #000;
-            color: #fff;
-            font-family: monospace;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
             margin: 0;
+            padding: 0;
+            background: #000;
+            overflow: hidden;
         }
-        .loading {
-            text-align: center;
-            font-size: 24px;
-            color: #ff0000;
+        iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
         }
     </style>
 </head>
 <body>
-    <div class="loading">
-        <h1>🔥 LOADING DOOM 🔥</h1>
-        <p>Redirecting...</p>
-        <p><a href="doom.html" style="color: #ff0000;">Click here if not redirected</a></p>
-    </div>
+    <iframe src="doom.html" allow="fullscreen" allowfullscreen></iframe>
 </body>
 </html>
 
