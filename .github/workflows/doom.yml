@@ -16,28 +16,39 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@v4
 
-      - name: Install dependencies
+      - name: Instalar dependências
         run: |
           sudo apt-get update
           sudo apt-get install -y chocolate-doom ffmpeg xvfb
 
-      - name: Run Doom and capture frames
+      - name: Checar se doom1.wad existe
         run: |
-          mkdir frames
+          if [ ! -f doom/doom1.wad ]; then
+            echo "Arquivo doom1.wad não encontrado! Por favor, adicione o arquivo em doom/doom1.wad."
+            exit 1
+          fi
 
-          xvfb-run \
+      - name: Rodar Doom e gerar gif
+        run: |
+          mkdir -p frames
+          xvfb-run --auto-servernum \
             chocolate-doom \
               -iwad doom/doom1.wad \
-              -timedemo demo1 \
               -nosound \
               -width 320 \
               -height 200 \
-              -config /dev/null \
-              -statdump frames/frame
+              -config /dev/null || true
 
-          ffmpeg -y -framerate 15 -i frames/frame%04d.ppm doom.gif
+          # Se não houver frames ppm, o ffmpeg dará erro. Adicione checagem se quiser.
+          if ls frames/*.ppm 1> /dev/null 2>&1; then
+            ffmpeg -y -framerate 15 -i frames/frame%04d.ppm doom.gif
+          else
+            echo "Nenhum frame encontrado! doom.gif não será criado."
+            exit 1
+          fi
 
-      - name: Commit gif
+      - name: Commitar gif (se existir)
+        if: success() && hashFiles('doom.gif') != ''
         run: |
           git config user.name "doom-bot"
           git config user.email "doom-bot@users.noreply.github.com"
