@@ -1,0 +1,43 @@
+name: Doom in README
+
+on:
+  schedule:
+    - cron: "0 */12 * * *"
+  workflow_dispatch:
+
+jobs:
+  run-doom:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Install dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y chocolate-doom ffmpeg xvfb
+
+      - name: Run Doom and capture frames
+        run: |
+          mkdir frames
+
+          xvfb-run \
+            chocolate-doom \
+              -iwad doom/doom1.wad \
+              -timedemo demo1 \
+              -nosound \
+              -width 320 \
+              -height 200 \
+              -config /dev/null \
+              -statdump frames/frame
+
+          ffmpeg -y -framerate 15 -i frames/frame%04d.ppm doom.gif
+
+      - name: Commit gif
+        run: |
+          git config user.name "doom-bot"
+          git config user.email "doom-bot@users.noreply.github.com"
+          git add doom.gif
+          git commit -m "update doom gif" || exit 0
+          git push
