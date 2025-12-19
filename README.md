@@ -13,7 +13,11 @@ public class Profile
 ```
 
 <div align="center">
-  <img src="./doom.svg" alt="DOOM Game" width="640" height="400" />
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Natteens/Natteens/output/doom-contribution-graph-dark.svg">
+    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/Natteens/Natteens/output/doom-contribution-graph.svg">
+    <img alt="Doom snake eating my contributions" src="https://raw.githubusercontent.com/Natteens/Natteens/output/doom-contribution-graph.svg">
+  </picture>
 </div>
 
 ###
