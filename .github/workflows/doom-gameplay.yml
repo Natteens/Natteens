@@ -14,7 +14,7 @@ permissions:
 jobs:
   generate:
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    timeout-minutes: 15
 
     steps:
       - name: Checkout
@@ -31,74 +31,135 @@ jobs:
           sudo apt-get install -y ffmpeg xvfb
           npm install puppeteer
 
-      - name: Generate Doom gameplay GIF
+      - name: Create Doom HTML page
         run: |
-          cat << 'EOF' > generate-doom.js
+          cat << 'EOF' > doom-capture.html
+          <!doctype html>
+          <html>
+          <head>
+            <meta charset="utf-8">
+            <style>
+              body { margin: 0; padding: 0; background: #000; }
+              .dosbox-container { width: 640px; height: 400px; }
+            </style>
+          </head>
+          <body>
+            <div id="dosbox"></div>
+            <script src="https://js-dos.com/cdn/js-dos-api.js"></script>
+            <script>
+              var dosbox = new Dosbox({
+                id: "dosbox",
+                onload: function (dosbox) {
+                  dosbox.run("https://cdn.dos.zone/original/2X/2/24b85e04285b0dd03d8f6511cf9a5fdf11d00a48.jsdos", "./DOOM");
+                },
+                onrun: function (dosbox, app) {
+                  console.log("DOOM STARTED");
+                  window.doomReady = true;
+                }
+              });
+            </script>
+          </body>
+          </html>
+          EOF
+
+      - name: Capture Doom gameplay frames
+        run: |
+          cat << 'EOF' > capture-doom.js
           const puppeteer = require('puppeteer');
-          const { exec } = require('child_process');
           const fs = require('fs');
           const path = require('path');
 
           (async () => {
+            console.log('Starting browser...');
             const browser = await puppeteer.launch({
               headless: 'new',
-              args: ['--no-sandbox', '--disable-setuid-sandbox']
+              args: [
+                '--no-sandbox',
+                '--disable-setuid-sandbox',
+                '--disable-web-security',
+                '--disable-features=IsolateOrigins,site-per-process'
+              ]
             });
             
             const page = await browser.newPage();
             await page.setViewport({ width: 640, height: 400 });
             
-            // Use a Doom gameplay video/demo as source
-            // Since we can't run actual Doom, we'll capture from a hosted demo
-            await page.goto('https://archive.org/embed/doom-play', { 
-              waitUntil: 'networkidle2',
-              timeout: 60000 
+            console.log('Loading Doom...');
+            await page.goto('file://' + process.cwd() + '/doom-capture.html', {
+              waitUntil: 'networkidle0',
+              timeout: 120000
             });
             
-            // Wait for content to load
-            await page.waitForTimeout(5000);
+            // Wait for Doom to load and start
+            console.log('Waiting for Doom to initialize...');
+            await page.waitForFunction('window.doomReady === true', { timeout: 90000 }).catch(() => {
+              console.log('Doom ready flag not set, continuing anyway...');
+            });
             
-            // Take screenshots for GIF
-            const frames = [];
-            const frameCount = 30;
-            const frameDelay = 200;
+            // Extra wait for game to fully render
+            await new Promise(r => setTimeout(r, 15000));
             
+            // Simulate pressing Enter to start game
+            await page.keyboard.press('Enter');
+            await new Promise(r => setTimeout(r, 2000));
+            await page.keyboard.press('Enter');
+            await new Promise(r => setTimeout(r, 3000));
+            
+            // Create frames directory
             if (!fs.existsSync('frames')) {
               fs.mkdirSync('frames');
             }
             
+            console.log('Capturing frames...');
+            const frameCount = 60;
+            
             for (let i = 0; i < frameCount; i++) {
-              const screenshotPath = `frames/frame_${String(i).padStart(3, '0')}.png`;
+              // Simulate some gameplay - move forward and look around
+              if (i % 10 < 5) {
+                await page.keyboard.down('ArrowUp');
+              } else {
+                await page.keyboard.up('ArrowUp');
+              }
+              
+              if (i % 20 < 10) {
+                await page.keyboard.down('ArrowLeft');
+              } else {
+                await page.keyboard.up('ArrowLeft');
+                await page.keyboard.down('ArrowRight');
+              }
+              
+              if (i % 15 === 0) {
+                await page.keyboard.press('Control'); // Fire
+              }
+              
+              const screenshotPath = `frames/frame_${String(i).padStart(4, '0')}.png`;
               await page.screenshot({ path: screenshotPath });
-              frames.push(screenshotPath);
-              await page.waitForTimeout(frameDelay);
+              console.log(`Captured frame ${i + 1}/${frameCount}`);
+              
+              await new Promise(r => setTimeout(r, 150));
             }
+            
+            // Release keys
+            await page.keyboard.up('ArrowUp');
+            await page.keyboard.up('ArrowLeft');
+            await page.keyboard.up('ArrowRight');
             
             await browser.close();
-            
-            // Create output directory
-            if (!fs.existsSync('dist')) {
-              fs.mkdirSync('dist');
-            }
-            
-            // Convert frames to GIF using ffmpeg
-            exec('ffmpeg -framerate 5 -i frames/frame_%03d.png -vf "scale=640:400" -y dist/doom-gameplay.gif', (error) => {
-              if (error) {
-                console.error('Error creating GIF:', error);
-                // Fallback: copy a static Doom image
-                exec('curl -L -o dist/doom-gameplay.gif "https://media1.giphy.com/media/3og0IExSrnfW2kUaaI/giphy.gif"');
-              }
-              console.log('GIF created successfully!');
-            });
+            console.log('Done capturing frames!');
           })();
           EOF
           
-          xvfb-run --auto-servernum node generate-doom.js || true
-          
-          # Fallback: Download a real Doom gameplay GIF if generation failed
-          if [ ! -f dist/doom-gameplay.gif ]; then
-            mkdir -p dist
-            curl -L -o dist/doom-gameplay.gif "https://media1.giphy.com/media/3og0IExSrnfW2kUaaI/giphy.gif"
+          xvfb-run --auto-servernum --server-args="-screen 0 1024x768x24" node capture-doom.js
+
+      - name: Create GIF from frames
+        run: |
+          mkdir -p dist
+          if ls frames/frame_*.png 1> /dev/null 2>&1; then
+            ffmpeg -framerate 10 -i frames/frame_%04d.png -vf "scale=640:400:flags=lanczos,split[s0][s1];[s0]palettegen=max_colors=256:stats_mode=full[p];[s1][p]paletteuse=dither=bayer:bayer_scale=5" -loop 0 -y dist/doom-gameplay.gif
+            echo "GIF created from captured frames!"
+          else
+            echo "No frames captured, check logs"
+            exit 1
           fi
 
       - name: Push to output branch

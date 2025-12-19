@@ -13,7 +13,7 @@ public class Profile
 ```
 
 <div align="center">
-  <img src="https://raw.githubusercontent.com/Natteens/Natteens/output/doom-gameplay.gif" alt="DOOM Gameplay" width="640"/>
+  <img src="https://raw.githubusercontent.com/Natteens/Natteens/output/doom.gif" alt="DOOM Gameplay" width="640"/>
 </div>
 
 ###
