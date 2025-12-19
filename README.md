@@ -12,13 +12,6 @@ public class Profile
 }
 ```
 
-<div align="center">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Natteens/Natteens/output/doom-contribution-graph-dark.svg">
-    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/Natteens/Natteens/output/doom-contribution-graph.svg">
-    <img alt="Doom snake eating my contributions" src="https://raw.githubusercontent.com/Natteens/Natteens/output/doom-contribution-graph.svg">
-  </picture>
-</div>
 
 ###
 
