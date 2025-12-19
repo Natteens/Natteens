@@ -12,16 +12,6 @@ public class Profile
 }
 ```
 
-<div align="center">
-  <h2>🔥 DOOM 🔥</h2>
-  <a href="https://natteens.github.io/Natteens/">
-    <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExYzBkNWVjOGQ1ZjNhNmY0ZjU3YzM5ZGQ5OTVhOWM0YmY4ZGU5ZjM3MSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/l0HlNQ03J5JxX6lva/giphy.gif" width="600" alt="DOOM"/>
-  </a>
-  <br/>
-  <a href="https://natteens.github.io/Natteens/">
-    <img src="https://img.shields.io/badge/CLICK_TO_PLAY-8B0000?style=for-the-badge&logoColor=white" alt="Play Doom"/>
-  </a>
-</div>
 
 ###
 
