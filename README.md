@@ -13,9 +13,7 @@ public class Profile
 ```
 
 <div align="center">
-  <object data="./doom.html" width="640" height="400" type="text/html">
-    <embed src="./doom.html" width="640" height="400" type="text/html" />
-  </object>
+  <img src="./doom.svg" alt="DOOM Game" width="640" height="400" />
 </div>
 
 ###
