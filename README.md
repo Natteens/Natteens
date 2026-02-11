@@ -1,4 +1,4 @@
-# Nathan (Natte)
+# Natte
 
 Tenho 23 anos e faço jogos. Trabalho principalmente com Unity e C#.
 
