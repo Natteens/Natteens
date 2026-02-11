@@ -32,19 +32,14 @@ Game Dev
 - Unity
 - C#
 
-Arte / 3D
+Arte
 - Blender
 
-Web / Suporte
-- HTML, CSS, JavaScript
+Web
+- JavaScript, Typescript 
 
 Outros
 - Python
-- Rider / outras IDEs
 - Git
 
 ---
-
-## Curiosidades
-- Eu adoro café.
-- Aberto a colaborações e feedback. 
